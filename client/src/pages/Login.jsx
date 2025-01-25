@@ -31,7 +31,7 @@ export default function Login() {
       <div className="bg-white p-8 rounded shadow-md w-full max-w-sm">
         <h1 className="text-2xl font-bold mb-6">Login</h1>
         {error && <p className="text-red-500 mb-4">{error}</p>}
-        <form onSubmit={handleLogin} className="flex flex-col space-y-4">
+        <form onSubmit={handleLogin} className="flex flex-col space-y-4">    
           <input
             type="email"
             placeholder="Email"
