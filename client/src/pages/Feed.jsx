@@ -73,7 +73,7 @@
           <Navbar />
           <div className="flex justify-center">
             {/* Post Form */}
-            <form onSubmit={handleUpload} className="flex flex-col space-y-4 w-full md:w-[30%] mt-6">
+            <form onSubmit={handleUpload} className="flex flex-col space-y-4 w-full px-2 md:w-[30%] mt-6">
               <input
                 type="file"
                 ref={fileInputRef} 
@@ -100,10 +100,10 @@
           </div>
 
           {/* Posts Preview */}
-          <div className="mt-8 flex gap-2 flex-wrap justify-center">
+          <div className="mt-8 flex gap-2 flex-wrap justify-center px-2">
             {posts.length > 0 ? (
               posts.map((post, index) => (
-                <div key={index} className="p-4 border rounded-lg w-full md:w-[30%]">
+                <div key={index} className="p-4 border rounded-lg w-full  md:w-[30%]">
                   <img
                     src={post.imgurl}
                     alt="Post preview"

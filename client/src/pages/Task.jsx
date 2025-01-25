@@ -108,25 +108,25 @@ const Tasks = () => {
       {errorMessage && <div className="text-red-500 mb-4">{errorMessage}</div>}
         <div>
       {/* Task Creation Form */}
-      <form onSubmit={addTask} className="mb-6 mt-6 ">
-        <div className="flex space-x-4">
+      <form onSubmit={addTask} className="mb-6 mt-6 px-2">
+        <div className="flex flex-col md:flex-row gap-2">
           <input
             type="text"
             placeholder="Task Name"
             value={taskName}
             onChange={(e) => setTaskName(e.target.value)}
-            className="p-2 border border-gray-300 rounded w-1/3"
+            className="p-2 border border-gray-300 rounded w-full md:w-1/3"
           />
           <input
             type="text"
             placeholder="Task Description"
             value={taskDescription}
             onChange={(e) => setTaskDescription(e.target.value)}
-            className="p-2 border border-gray-300 rounded w-1/3"
+            className="p-2 border border-gray-300 rounded w-full md:w-1/3"
           />
           <button
             type="submit"
-            className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 cursor-pointer"
+            className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 cursor-pointer w-full md:w-fit"
           >
             Add Task
           </button>
@@ -136,7 +136,7 @@ const Tasks = () => {
      
       {/* Drag-and-Drop Task Columns */}
       <DragDropContext onDragEnd={handleDragEnd}>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-2">
           {["Pending", "Completed", "Done"].map((status) => (
             <Droppable droppableId={status} key={status}>
               {(provided) => (
