@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
+ 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate()
@@ -18,14 +19,14 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8">
           <li>
-            <a href="/tasks" className="hover:text-gray-200">
+            <Link to="/tasks" className="hover:text-gray-200">
               Task
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/feed" className="hover:text-gray-200">
+            <Link to="/feed" className="hover:text-gray-200">
               Feed
-            </a>
+            </Link>
           </li>
           <li>
            <button onClick={onlogout} className="hover:text-red-200 cursor-pointer" >Logout</button>
@@ -58,14 +59,14 @@ const Navbar = () => {
       {isMenuOpen && (
         <ul className="md:hidden bg-grey-600 text-white space-y-4 px-4 py-6">
           <li>
-            <a href="/tasks" className="block hover:text-gray-200">
+            <Link to="/tasks" className="block hover:text-gray-200">
               Task
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="feed" className="block hover:text-gray-200">
+            <Link to="/feed" className="block hover:text-gray-200">
               Feed
-            </a>
+            </Link>
           </li>
           <li>
            <button onClick={onlogout} className="block hover:text-red-200 cursor-pointer" >Logout</button>
