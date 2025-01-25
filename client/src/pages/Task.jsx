@@ -14,7 +14,7 @@ const Tasks = () => {
   // Fetch tasks from the server
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/task", {
+      const res = await axios.get("https://task-management-vcao.onrender.com/api/task", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -42,7 +42,7 @@ const Tasks = () => {
     setTasks(updatedTasks);
 
     try {
-      await axios.put(`http://localhost:5000/api/task/${movedTask._id}`, {
+      await axios.put(`https://task-management-vcao.onrender.com/api/task/${movedTask._id}`, {
         status: movedTask.status,
       }, {
         headers: {
@@ -64,7 +64,7 @@ const Tasks = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/task", {
+      const res = await axios.post("https://task-management-vcao.onrender.com/api/task", {
         name: taskName,
         description: taskDescription,
         status: "Pending",
@@ -86,7 +86,7 @@ const Tasks = () => {
   const deleteTask = async (taskId) => {
     if (window.confirm("Are you sure you want to delete this task?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/task/${taskId}`, {
+        await axios.delete(`https://task-management-vcao.onrender.com/api/task/${taskId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

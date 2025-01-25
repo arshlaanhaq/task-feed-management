@@ -13,7 +13,7 @@
     // Fetch feeds from the server
     const fetchFeeds = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/feed", {
+        const res = await axios.get("https://task-management-vcao.onrender.com/api/feed", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -43,7 +43,7 @@
         );
 
         await axios.post(
-          "http://localhost:5000/api/feed",
+          "https://task-management-vcao.onrender.com/api/feed",
           {
             imgurl: cloudinaryRes.data.secure_url,
             caption,
