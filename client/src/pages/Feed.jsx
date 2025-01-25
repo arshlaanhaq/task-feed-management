@@ -107,7 +107,7 @@
                   <img
                     src={post.imgurl}
                     alt="Post preview"
-                    className="w-full aspect-video object-cover"
+                    className="w-full aspect-video object-contain"
                   />
                   <p className="mt-2 text-gray-700">{post.caption}</p>
                 </div>
